@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Web Page to Markdown Converter",
+  "short_name": "Page2MD",
+  "version": "1.1.0",
+  "description": "Convert web pages, articles or selections into clean Markdown for LLM prompts, Obsidian and Notion. 100% local.",
+  "permissions": ["activeTab", "clipboardWrite", "contextMenus", "storage", "scripting"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Convert page to Markdown",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "commands": {
+    "_execute_action": { "suggested_key": { "default": "Alt+Shift+M" }, "description": "Open Markdown converter" },
+    "copy-markdown": { "suggested_key": { "default": "Alt+Shift+C" }, "description": "Copy selection (or article) as Markdown" }
+  },
+  "minimum_chrome_version": "102"
+}

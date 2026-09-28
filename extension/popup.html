@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Web Page to Markdown</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header>
+  <img src="icons/icon32.png" width="20" height="20" alt="">
+  <h1>Page → Markdown</h1>
+  <button id="toggleSettings" class="icon" title="Settings" aria-expanded="false">⚙</button>
+</header>
+
+<div class="seg" role="tablist" aria-label="Conversion scope">
+  <button data-mode="article" role="tab">Article</button>
+  <button data-mode="page" role="tab">Full page</button>
+  <button data-mode="selection" role="tab">Selection</button>
+</div>
+
+<section id="settings" hidden>
+  <label>Images
+    <select name="images"><option value="keep">Embed ![alt](url)</option><option value="link">Link only</option><option value="strip">Remove</option></select>
+  </label>
+  <label>Links
+    <select name="links"><option value="inline">Inline</option><option value="reference">Reference [1]</option><option value="strip">Plain text</option></select>
+  </label>
+  <label>Code fence
+    <select name="fence"><option value="```">``` backticks</option><option value="~~~">~~~ tildes</option></select>
+  </label>
+  <label>Bullet
+    <select name="bullet"><option value="-">-</option><option value="*">*</option><option value="+">+</option></select>
+  </label>
+  <label class="chk"><input type="checkbox" name="codeLang"> Language tags on code</label>
+  <label class="chk"><input type="checkbox" name="titleHeading"> Add # title heading</label>
+  <label class="chk"><input type="checkbox" name="frontMatter"> YAML front matter</label>
+</section>
+
+<textarea id="preview" spellcheck="false" aria-label="Markdown preview" placeholder="Converting…"></textarea>
+<div id="stats"></div>
+
+<footer>
+  <button id="copy" class="primary">Copy Markdown</button>
+  <button id="download">Download .md</button>
+</footer>
+<section id="supportPanel" hidden>
+  <p class="note">This extension is free and runs 100% locally. If it saves you time, a small tip helps keep it maintained. 🙏</p>
+  <a class="pay" href="https://razorpay.me/@satishkumarjaiswal4142" target="_blank" rel="noopener">
+    <span>Pay securely via Razorpay</span><small>UPI · Cards · Netbanking · Wallets</small>
+  </a>
+  <div class="qr">
+    <img src="icons/upi-qr.png" width="148" height="148" alt="UPI QR code for tipping the developer">
+    <div><strong>Scan &amp; pay</strong><br>Open any UPI app and scan<br><small>GPay · PhonePe · Paytm · BHIM</small></div>
+  </div>
+</section>
+<button id="supportToggle" class="support" aria-expanded="false">☕ Enjoying it? Support the developer</button>
+<script src="popup.js"></script>
+</body>
+</html>

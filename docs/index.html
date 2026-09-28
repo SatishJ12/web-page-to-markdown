@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Page to Markdown Converter – Help &amp; Support</title>
+<meta name="description" content="Help, FAQ and support for the Web Page to Markdown Converter Chrome extension. Convert web pages into clean Markdown for LLMs, Obsidian and Notion.">
+<link rel="icon" href="assets/icon128.png">
+<style>
+  :root { --bg:#ffffff; --fg:#111827; --muted:#4b5563; --line:#e5e7eb; --soft:#f5f6fb; --accent:#4f46e5; --accent-2:#312e81; --code:#f3f4f6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1220; --fg:#f3f4f6; --muted:#a1a7b8; --line:#262b40; --soft:#161a2d; --accent:#818cf8; --accent-2:#c7d2fe; --code:#1d2238; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  a { color:var(--accent); }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+  nav { border-bottom:1px solid var(--line); }
+  nav .wrap { display:flex; align-items:center; gap:18px; height:60px; }
+  nav .brand { display:flex; align-items:center; gap:10px; font-weight:700; color:var(--fg); text-decoration:none; margin-right:auto; }
+  nav .brand img { width:28px; height:28px; }
+  nav a.l { color:var(--muted); text-decoration:none; font-size:15px; }
+  nav a.l:hover { color:var(--accent); }
+  header { padding:56px 0 32px; }
+  h1 { font-size:clamp(30px,5vw,44px); line-height:1.12; margin:0 0 14px; letter-spacing:-.02em; }
+  .lead { font-size:19px; color:var(--muted); max-width:640px; margin:0 0 26px; }
+  .btns { display:flex; flex-wrap:wrap; gap:12px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:10px; font-weight:600; text-decoration:none; border:1px solid var(--line); color:var(--fg); background:var(--soft); }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+  @media (prefers-color-scheme: dark) { .btn.primary { color:#0f1220; } }
+  .shot { margin:34px 0 8px; border-radius:14px; border:1px solid var(--line); width:100%; height:auto; display:block; }
+  section { padding:40px 0; border-top:1px solid var(--line); }
+  h2 { font-size:26px; margin:0 0 18px; letter-spacing:-.01em; }
+  h3 { font-size:17px; margin:0 0 6px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
+  .card { background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:18px; }
+  .card p { margin:0; color:var(--muted); font-size:15px; }
+  ol.steps { padding-left:22px; margin:0; } ol.steps li { margin:6px 0; }
+  kbd, code { background:var(--code); border:1px solid var(--line); border-radius:6px; padding:1px 6px; font:13.5px ui-monospace,Menlo,Consolas,monospace; }
+  details { border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin:10px 0; background:var(--soft); }
+  summary { cursor:pointer; font-weight:600; }
+  details p, details ul { color:var(--muted); margin:10px 0 2px; }
+  .tip { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
+  .tip img.qr { width:160px; height:160px; background:#fff; padding:6px; border-radius:10px; image-rendering:pixelated; }
+  .qrcap { text-align:center; font-size:13px; color:var(--muted); margin-top:6px; }
+  footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--muted); font-size:14px; }
+  footer .wrap { display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
+  @media (max-width:640px) { nav a.l.hide-sm { display:none; } .tip { grid-template-columns:1fr; } .tip .qrbox { justify-self:start; } }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#"><img src="assets/icon128.png" alt="">Page → Markdown</a>
+  <a class="l hide-sm" href="#how">How to use</a>
+  <a class="l" href="#faq">FAQ</a>
+  <a class="l" href="#contact">Support</a>
+  <a class="l hide-sm" href="privacy.html">Privacy</a>
+</div></nav>
+
+<header><div class="wrap">
+  <h1>Web Page to Markdown Converter</h1>
+  <p class="lead">Turn any web page, article or highlighted text into clean Markdown in one click, ready for ChatGPT, Claude, Obsidian, Notion and GitHub. Everything runs locally in your browser.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/fmbinlegholbmghcdbibjkdcbkcnolip" target="_blank" rel="noopener">Add to Chrome, it's free</a>
+    <a class="btn js-issues" href="#contact">Report a problem</a>
+  </div>
+  <img class="shot" src="assets/1-clean-article.png" width="1280" height="800" alt="The extension popup converting a blog article into clean Markdown">
+</div></header>
+
+<section id="features"><div class="wrap">
+  <h2>What it does</h2>
+  <div class="grid">
+    <div class="card"><h3>Clean article extraction</h3><p>Removes ads, menus, sidebars, cookie banners and comments, so you only keep the real content.</p></div>
+    <div class="card"><h3>Code &amp; tables preserved</h3><p>Code blocks keep language tags like <code>```python</code>. HTML tables become GitHub-style Markdown tables.</p></div>
+    <div class="card"><h3>Selection only</h3><p>Highlight part of a page and convert just that, from the popup or the right-click menu.</p></div>
+    <div class="card"><h3>Obsidian-ready</h3><p>Optional YAML front matter (title, source, author, date) and one-click <code>.md</code> download.</p></div>
+    <div class="card"><h3>LLM-friendly</h3><p>Live word, character and token estimate, so you know what fits in your prompt.</p></div>
+    <div class="card"><h3>Private by design</h3><p>No servers, no tracking, no account. The page never leaves your browser.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How to use</h2>
+  <div class="grid">
+    <div class="card"><h3>From the toolbar</h3>
+      <ol class="steps"><li>Open any article or docs page.</li><li>Click the extension icon (or press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>).</li><li>Pick <b>Article</b>, <b>Full page</b> or <b>Selection</b>.</li><li>Click <b>Copy Markdown</b> or <b>Download .md</b>.</li></ol></div>
+    <div class="card"><h3>From the right-click menu</h3>
+      <ol class="steps"><li>Highlight any text on the page.</li><li>Right-click → <b>Copy selection as Markdown</b>.</li><li>Or right-click anywhere → <b>Copy page as Markdown</b> / <b>Download full page as Markdown</b>.</li></ol></div>
+    <div class="card"><h3>Keyboard shortcuts</h3>
+      <p><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>: open the converter<br><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>: copy the selection, or the article if nothing is selected<br><br>Change them at <code>chrome://extensions/shortcuts</code>.</p></div>
+  </div>
+  <img class="shot" src="assets/3-selection.png" width="1280" height="800" alt="Converting only the highlighted part of a page" loading="lazy">
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Frequently asked questions</h2>
+  <details><summary>The Selection tab shows "No text is selected". Why?</summary>
+    <p>The popup closes when you click the page, so highlight the text <b>first</b>, then open the extension. It will switch to Selection automatically. You can also right-click the highlighted text and choose "Copy selection as Markdown".</p></details>
+  <details><summary>Why doesn't it work on some pages?</summary>
+    <p>Chrome blocks all extensions on its own pages (<code>chrome://</code> pages, the Chrome Web Store, the New Tab page) and on built-in PDF viewers. On regular websites it should work. If a page fails, please report it with the URL.</p></details>
+  <details><summary>Some text or images are missing from the Article view.</summary>
+    <p>Article mode uses a readability algorithm to drop page clutter, and it can occasionally be too aggressive. Switch to <b>Full page</b> to convert everything, or highlight the part you need and use <b>Selection</b>.</p></details>
+  <details><summary>Can I work on pages that need a login (paywalls, company wikis)?</summary>
+    <p>Yes. The extension converts what is already displayed in your browser, so any page you can see can be converted, and nothing is sent anywhere.</p></details>
+  <details><summary>How do I change the output format?</summary>
+    <p>Click the ⚙ gear in the popup to choose image and link style, <code>```</code> or <code>~~~</code> code fences, bullet character, title heading and YAML front matter. Settings are saved automatically.</p></details>
+  <details><summary>Does it collect any data?</summary>
+    <p>No. There are no analytics, no servers and no accounts. Only your formatting preferences are saved, in Chrome's own sync storage. See the <a href="privacy.html">privacy policy</a>.</p></details>
+  <details><summary>Text inside an embedded frame isn't picked up.</summary>
+    <p>For security, Chrome only lets the extension read frames from the same website as the page. For embedded content from another site, right-click inside that frame and use "Copy selection as Markdown".</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Get help</h2>
+  <div class="grid">
+    <div class="card"><h3>Report a bug or request a feature</h3><p>Open an issue on GitHub. Please include the page URL, what you expected and what happened.</p><p style="margin-top:12px"><a class="btn js-issues" href="#">Open GitHub Issues</a></p></div>
+    <div class="card"><h3>Email</h3><p>Prefer email? Write to<br><a href="mailto:satish.jaiswal.aum@gmail.com?subject=Page%20to%20Markdown%20support">satish.jaiswal.aum@gmail.com</a><br>I usually reply within a few days.</p></div>
+  </div>
+</div></section>
+
+<section id="tip"><div class="wrap tip">
+  <div>
+    <h2>Support the developer</h2>
+    <p class="lead" style="font-size:17px;margin-bottom:18px">The extension is free, with no ads and no tracking. If it saves you time, a small tip helps keep it maintained. Thank you! 🙏</p>
+    <a class="btn primary" href="https://razorpay.me/@satishkumarjaiswal4142" target="_blank" rel="noopener">☕ Tip via Razorpay (UPI · Cards · Netbanking)</a>
+  </div>
+  <div class="qrbox"><img class="qr" src="assets/upi-qr.png" width="160" height="160" alt="UPI QR code"><div class="qrcap">Scan with any UPI app</div></div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 Satish Kumar Jaiswal · Web Page to Markdown Converter</span>
+  <span><a href="privacy.html">Privacy policy</a> · <a class="js-repo" href="#">Source code</a></span>
+</div></footer>
+
+<script>
+  // Derive the GitHub repo from the Pages URL (username.github.io/repo/), so no hard-coded username is needed.
+  (function () {
+    var host = location.hostname, m = host.match(/^([^.]+)\.github\.io$/);
+    if (!m) return;
+    var repo = location.pathname.split('/').filter(Boolean)[0];
+    if (!repo) return;
+    var base = 'https://github.com/' + m[1] + '/' + repo;
+    document.querySelectorAll('.js-issues').forEach(function (a) { a.href = base + '/issues/new/choose'; a.target = '_blank'; a.rel = 'noopener'; });
+    document.querySelectorAll('.js-repo').forEach(function (a) { a.href = base; });
+  })();
+</script>
+</body>
+</html>
